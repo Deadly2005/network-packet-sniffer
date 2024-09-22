@@ -1,0 +1,54 @@
+Network Traffic Analysis Tool - User Guide
+
+Overview
+This tool captures network traffic for a specified duration and visualizes packet count over time. The tool uses Scapy for packet sniffing and Plotly for visualization.
+
+Features
+Capture Network Packets: Sniffs packets from a selected network interface.
+Save Packets to PCAP File: Saves captured packets to a .pcap file.
+Visualize Traffic Over Time: Creates a histogram showing packet count over time.
+Installation
+Ensure Python is Installed: This tool requires Python 3.6 or higher.
+
+Install Required Packages:
+
+bash
+Copy code
+pip install scapy plotly
+Usage
+Command Line Arguments
+-t, --time (required): Duration to capture packets in seconds.
+-o, --output (optional): Directory to save visualizations.
+Example Command
+bash
+Copy code
+python netwrk.py -t 60 -o output_directory
+This command captures packets for 60 seconds and saves the visualization to output_directory.
+
+Functionality
+1. Packet Capture
+Network Interface Selection: Prompts user to select a network interface from a list of available interfaces.
+Packet Sniffing: Captures packets for the specified duration and stores them in a buffer.
+2. Data Visualization
+Histogram: Displays packet count over time.
+File Output: Saves the visualization as an HTML file in the specified output directory.
+Handling Interruptions
+KeyboardInterrupt: Stops packet sniffing and saves captured packets if interrupted.
+Signal Handling: Handles termination signals to ensure graceful shutdown.
+Error Handling
+Missing Dependencies: The tool checks for required packages and installs them if not found.
+Invalid Choices: Provides error messages for invalid network interface choices.
+Example Output
+HTML File: network_traffic_analysis.html in the specified output directory.
+Troubleshooting
+No Packets Captured:
+
+Ensure the network interface is active and has traffic.
+Verify that the filter criteria are correct.
+Visualization Issues:
+
+Ensure Plotly is installed and updated.
+Contact
+For support or further questions, please contact support@example.com.
+
+End of Guide
